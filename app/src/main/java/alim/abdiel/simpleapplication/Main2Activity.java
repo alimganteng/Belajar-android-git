@@ -1,9 +1,7 @@
-package alim.abdiel;
+package alim.abdiel.simpleapplication;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import alim.abdiel.simpleapplication.R;
+import android.support.v7.app.AppCompatActivity;
 
 public class Main2Activity extends AppCompatActivity {
 

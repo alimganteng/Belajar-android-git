@@ -1,44 +1,41 @@
 package alim.abdiel.simpleapplication;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-
-import alim.abdiel.Main2Activity;
-
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonActivity, buttonFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        buttonActivity = (Button) findViewById(R.id.activity);
-        buttonFragment = (Button) findViewById(R.id.Fragment);
-
-
-        buttonActivity.setOnClickListener(new View.OnClickListener()){
-            
-            public void onClick(View arg0) {
-                ~getSupportFragmentManager() .beginTransaction() .add(R.id.frame, new MainActivity()
-
-                        Intent i =new Intent(getApplicationContext (), Main2Activity.class);
-
-                startActivity();
+        Bundle kirim = getIntent().getExtras();
+        TextView nama = (TextView) findViewById(R.id.user1);
+        nama.setText(kirim.getCharSequence("nama"));
 
 
 
+    }
 
+    public void tambahuser(View view) {
 
-            }
+    }
 
-        });
+    public void list(View view) {
+    }
 
+    public void kefragment(View view) {
+        Intent intent = new Intent(MainActivity.this,Main3Activity.class);
+        startActivity(intent);
+    }
+
+    public void Pindah(View view) {
+        Intent intent = new Intent(MainActivity.this,Main2Activity.class);
+        startActivity(intent);
 
     }
 }
