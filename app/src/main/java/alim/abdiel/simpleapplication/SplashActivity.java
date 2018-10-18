@@ -5,34 +5,22 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-
-
 import alim.abdiel.simpleapplication.util.PreferencesHelper;
 
-
-public class SplashScreen extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
     PreferencesHelper instance;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.activity_splash);
         instance = PreferencesHelper.getInstance(getApplicationContext());
         int splashInterval = 10;
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                if (!instance.isLogin()) {
-                    startActivity(new Intent(SplashScreen.this, LoginActivity.class));
-
-                } else {
-                    startActivity(new Intent(SplashScreen.this, Main2Activity.class));
-                }
+        new Handler().postDelayed(() -> {
+            if (!instance.isLogin()) {
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+            } else {
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
             }
-
         }, splashInterval);
-
-
     }
 }

@@ -7,22 +7,23 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
-
 import alim.abdiel.simpleapplication.util.PreferencesHelper;
 
 public class LoginActivity extends AppCompatActivity {
+
     PreferencesHelper instance;
     private EditText name;
     private EditText email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         instance = PreferencesHelper.getInstance(getApplicationContext());
 
-        name = (EditText) findViewById(R.id.text1);
-        email = (EditText) findViewById(R.id.text2);
+        name = (EditText) findViewById(R.id.etName);
+        email = (EditText) findViewById(R.id.etEmail);
     }
 
     public void Login(View view) {
@@ -34,11 +35,5 @@ public class LoginActivity extends AppCompatActivity {
 
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
-        Bundle kirim = new Bundle();
-        kirim.putString("nama", n);
-        intent.putExtras(kirim);
-        startActivity(intent);
-        finish();
-
     }
 }

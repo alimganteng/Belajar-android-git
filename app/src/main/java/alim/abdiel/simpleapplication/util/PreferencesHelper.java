@@ -13,26 +13,33 @@ public class PreferencesHelper {
                 .getApplicationContext()
                 .getSharedPreferences("simple.android.app", Context.MODE_PRIVATE);
     }
+
     public static PreferencesHelper getInstance(Context context) {
-        if  (INSTANCE == null) {
+        if (INSTANCE == null) {
             INSTANCE = new PreferencesHelper(context);
         }
         return INSTANCE;
     }
-    public  SharedPreferences Pref()  {
+
+    public SharedPreferences Pref() {
         return sharedPreferences;
     }
 
-    public Boolean isLogin (){
+
+    public Boolean isLogin() {
         return sharedPreferences.getBoolean("isLogin", false);
     }
+
     public void setLogin(boolean isCall) {
         sharedPreferences.edit().putBoolean("isLogin", isCall).apply();
     }
+
     public void setName(String isName) {
-        sharedPreferences.edit().putString("isName",isName).apply();
+        sharedPreferences.edit().putString("isName", isName).apply();
     }
+
     public String getName() {
-        return sharedPreferences.getString("isName","");
+        return sharedPreferences.getString("isName", "");
     }
+
 }

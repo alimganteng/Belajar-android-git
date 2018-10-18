@@ -1,67 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="alim.abdiel.simpleapplication.MainActivity">
-
+    tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical">
-
-        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/etName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-
-                android:id="@+id/hello"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="HELLO :" />
-
-            <TextView
-                android:id="@+id/user1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/add_user"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="tambahuser"
-            android:text="add user" />
-
-        <Button
-            android:id="@+id/list_user"
-            android:layout_width="153dp"
-            android:layout_height="wrap_content"
-            android:onClick="list"
-            android:text="List user" />
-
-        <Button
-            android:id="@+id/btn_frag"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="kefragment"
-            android:text="Go To Fragment" />
-
-        <Button
-            android:id="@+id/btn_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Go To Activity"
-            android:onClick="Pindah"/>
-
-
+            android:text="Hello World!"
+            android:textColor="@color/colorPrimary" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <Button
+            android:id="@+id/addUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add User" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/listUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="List User" />
+
+        <Button
+            android:id="@+id/changeActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Activity" />
+
+        <Button
+            android:id="@+id/changeFragmentActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Fragment" />
+
+        <EditText
+            android:id="@+id/inputText"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
